@@ -1,0 +1,24 @@
+{
+	"name": "incremental_dataset_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_database_connection_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "LastModifiedDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "High_Water_Concept_Data"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

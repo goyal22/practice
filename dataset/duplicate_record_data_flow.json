@@ -1,0 +1,39 @@
+{
+	"name": "duplicate_record_data_flow",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_connection_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "ds.json",
+				"fileSystem": "landing"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"EmployeeID": {
+					"type": "integer"
+				},
+				"FirstName": {
+					"type": "string"
+				},
+				"LastName": {
+					"type": "string"
+				},
+				"City": {
+					"type": "string"
+				},
+				"DateOfBirth": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

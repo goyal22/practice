@@ -1,0 +1,27 @@
+{
+	"name": "sql_parameterized_lk_service",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"databaseName": {
+				"type": "string"
+			},
+			"userName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=missionazure2023.database.windows.net;Initial Catalog=@{linkedService().databaseName};User ID=@{linkedService().userName}",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "keyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "dbPswd"
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"name": "db_scd_typ1_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_database_connection_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "city",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "employee_ScdType1"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

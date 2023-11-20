@@ -1,0 +1,48 @@
+{
+	"name": "quest_3_metadata",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "genric_metadata_dataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"fileName": "SalesLt.Customer.txt"
+						}
+					},
+					"fieldList": [
+						"exists",
+						"itemName",
+						"itemType"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Assignment 7"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-30T10:37:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
